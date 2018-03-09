@@ -1,0 +1,20 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
+
+msgid "KMO Wallet"
+msgstr "KMO Portefeuille"
+
+msgid "Process your payment with the 'kmo-portefeuille'."
+msgstr "Verwerk uw betaling via de 'kmo-portefeuille'."
