@@ -31,7 +31,6 @@ class CRM_Core_Payment_KMOPayment extends CRM_Core_Payment {
    * @return void
    */
   function __construct($mode, &$paymentProcessor) {
-    $this->_mode = $mode;
     $this->_paymentProcessor = $paymentProcessor;
     $this->_processorName = E::ts('KMO Wallet', ['domain' => 'be.ctrl.kmowallet']);
   }
