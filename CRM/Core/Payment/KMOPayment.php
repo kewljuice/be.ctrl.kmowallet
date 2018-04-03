@@ -62,10 +62,6 @@ class CRM_Core_Payment_KMOPayment extends CRM_Core_Payment {
     return NULL;
   }
 
-  function doDirectPayment(&$params) {
-
-  }
-
   /**
    * Sets appropriate parameters for checking out KMO wallet
    *
@@ -79,5 +75,25 @@ class CRM_Core_Payment_KMOPayment extends CRM_Core_Payment {
     // Message.
     $message = E::ts("Process your payment with the 'kmo-portefeuille'.", ['domain' => 'be.ctrl.kmowallet']);
     CRM_Core_Session::setStatus($message, '', 'success');
+    // Change participant status to "pending from pay later".
+    try {
+      $participant = civicrm_api3('Participant', 'create', [
+        'id' => $params['participantID'],
+        'status_id' => "Pending from pay later",
+      ]);
+    } catch (Exception $e) {
+      // Log
+      // watchdog("doTransferCheckout", print_r($e, true));
+    }
+    // Send confirmation email.
+    try {
+      $confirmation = civicrm_api3('Contribution', 'sendconfirmation', [
+        'id' => $params['contributionID'],
+      ]);
+    } catch (Exception $e) {
+      // Log
+      // watchdog("doTransferCheckout", print_r($e, true));
+    }
   }
+
 }
