@@ -17,4 +17,4 @@ msgid "KMO Wallet"
 msgstr "KMO Portefeuille"
 
 msgid "Process your payment with the 'kmo-portefeuille'."
-msgstr "Verwerk uw betaling via de 'kmo-portefeuille'."
+msgstr "U hebt gekozen om gebruik te maken van de KMO-portefeuille. Vergeet niet uw aanvraag bij de KMO-portefeuille in te dienen binnen de 14 dagen na de startdatum van de opleiding. Ons erkenningsnummer is: DV.O217461. Meer info op www.kmo-portefeuille.be."

@@ -2,7 +2,7 @@
 
 require_once 'CRM/Core/Payment.php';
 
-use CRM_Kmowallet_ExtensionUtil as E;
+use CRM_ctrl_Kmowallet_ExtensionUtil as E;
 
 class CRM_Core_Payment_KMOPayment extends CRM_Core_Payment {
 
@@ -72,9 +72,11 @@ class CRM_Core_Payment_KMOPayment extends CRM_Core_Payment {
    *
    */
   function doTransferCheckout(&$params, $component) {
+
     // Message.
     $message = E::ts("Process your payment with the 'kmo-portefeuille'.", ['domain' => 'be.ctrl.kmowallet']);
     CRM_Core_Session::setStatus($message, '', 'success');
+
     // Change participant status to "pending from pay later".
     try {
       $participant = civicrm_api3('Participant', 'create', [
@@ -85,6 +87,7 @@ class CRM_Core_Payment_KMOPayment extends CRM_Core_Payment {
       // Log
       // watchdog("doTransferCheckout", print_r($e, true));
     }
+
     // Send confirmation email.
     try {
       $confirmation = civicrm_api3('Contribution', 'sendconfirmation', [
@@ -94,6 +97,6 @@ class CRM_Core_Payment_KMOPayment extends CRM_Core_Payment {
       // Log
       // watchdog("doTransferCheckout", print_r($e, true));
     }
-  }
 
+  }
 }
