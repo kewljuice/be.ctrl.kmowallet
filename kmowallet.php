@@ -101,6 +101,7 @@ function kmowallet_civicrm_managed(&$entities) {
   ];
   $entities[] = [
     'module' => 'be.ctrl.kmowallet',
+    'name' => 'KMO Wallet',
     'entity' => 'OptionValue',
     'params' => [
       'version' => 3,
