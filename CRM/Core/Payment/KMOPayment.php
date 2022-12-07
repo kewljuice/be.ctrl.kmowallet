@@ -71,7 +71,7 @@ class CRM_Core_Payment_KMOPayment extends CRM_Core_Payment {
    * @access public
    *
    */
-  function doTransferCheckout(&$params, $component) {
+  function doTransferCheckout(&$params, $component = 'contribute') {
 
     // Message.
     $message = E::ts("Process your payment with the 'kmo-portefeuille'.", ['domain' => 'be.ctrl.kmowallet']);
